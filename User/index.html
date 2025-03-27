@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button id="toggleSidebar" class="toggle-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <path d="M9 3v18M3 12h18" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="Featuredbooks">
+                <a href="#" class="nav-item active">
+                    <span class="nav-icon"></span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+                <a href="book.html" class="nav-item">
+                    <span class="nav-icon"></span>
+                    <span class="nav-label">View Books</span>
+                </a>
+                <a href="subsandfines.html" class="nav-item">
+                    <span class="nav-icon"></span>
+                    <span class="nav-label">Subscriptions and Fines</span>
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon"></span>
+                    <span class="nav-label">Reports</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon"></span>
+                    <span class="nav-label">Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="nav-item">
+                    <span class="nav-icon"></span>
+                    <span class="nav-label">Log Out</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="container">
+                <h1>My Dashboard</h1>
+                <h2>Recommendations</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 style="font-size: 0.875rem; color:black; margin-bottom: 0.5rem; ">Books Borrowed</h3>
+                        <p>4</p>
+                        <a href="book.html"></a>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3 style="font-size: 0.875rem; color:#f40b0b ; margin-bottom: 0.5rem; ">Overdue Books</h3>
+                        <p>2</p>
+                        <a href="book.html"></a>
+                    </div>
+                    <div class="stat-card">
+                        <a href="subsandfines.html">
+                            <h3 style="font-size: 0.875rem; color: #007bff; margin-bottom: 0.5rem;">Outstanding Fines</h3>
+                        <p id="outstandingFines">$22.00</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="Subscriptions">
+                    <div class="chart-container">
+                        <h3>Subscriptions</h3>
+                        <button class="nav-item">
+                           <span class="nav-label">Review Subscriptions</span>
+                        </button>
+                    </div>
+
+                    <br>
+
+                <div class="borrowed-books">
+                    <div class="chart-container full-width">
+                        <h3>Borrowed Books</h3>
+                        <div class="borrowed-charts">
+                            <div class="chart-half">
+                                <canvas id="borrowedBarsChart"></canvas>
+                            </div>
+                            <div class="chart-half">
+                                <h4>Categories borrowed most</h4>
+                                <canvas id="borrowedPieChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>

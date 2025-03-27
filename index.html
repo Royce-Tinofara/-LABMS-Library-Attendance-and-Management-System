@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Book Management System</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="dashboard">
+      <aside class="sidebar" id="sidebar">
+         <div class="sidebar-header">
+            <button id="toggleSidebar" class="toggle-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M9 3v18M3 12h18" />
+              </svg>
+          </button>
+          </div>
+          <nav class="nav-menu">
+            <a href="index.html" class="nav-item ">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-label">Dashboard</span>
+            </a>
+            <a href="bookmanagement.html" class="nav-item active">
+              <span class="nav-icon">📚</span>
+              <span class="nav-label">Book Management</span>
+            </a>
+            <a href="issuebooks.html" class="nav-item">
+              <span class="nav-icon">📖</span>
+              <span class="nav-label">Issue Books</span>
+            </a>
+            <a href="member.html" class="nav-item">
+              <span class="nav-icon">👥</span>
+              <span class="nav-label">Member Management</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+              <span class="nav-icon">📊</span>
+              <span class="nav-label">Reports</span>
+            </a>
+          </nav>
+          <div class="sidebar-footer">
+            <button class="nav-item">
+              <span class="nav-icon">🚪</span>
+              <span class="nav-label">Log Out</span>
+            </button>
+          </div>
+         </aside>
+      <main  class="main-content">
+         <div class="container">
+            <header>
+               <h1>📚 Book Management System</h1>
+               <button id="addBookBtn" class="btn-primary">Add New Book</button>
+             </header>
+     
+             <div class="search-filter">
+               <div class="search-box">
+                 <input type="text" id="searchInput" placeholder="Search books...">
+               </div>
+             </div>
+     
+             <div class="books-container">
+               <table id="bookTable">
+                 <thead>
+                   <tr>
+                     <th>Title</th>
+                     <th>Author</th>
+                     <th>Category</th>
+                     <th>ISBN</th>
+                     <th>Total Copies</th>
+                     <th>Available Copies</th>
+                     <th>Updates</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   <!--Books will be dynamically added here-->>
+                 </tbody>
+               </table>
+             </div>
+            </div>
+            <div id="bookModal" class="modal">
+              <div class="modal-content">
+                 <span class="close">&times;</span>
+                 <form id="addBookForm">
+                    <h2>Add a New Book</h2>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+     
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" required>
+     
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" name="category" required>
+     
+                    <label for="isbn">ISBN:</label>
+                    <input type="text" id="isbn" name="ISBN" required>
+     
+                    <label for="totalCopies">Total Copies:</label>
+                    <input type="number" id="totalCopies" name="totalCopies" required>
+                    
+                    <label for="availableCopies">Available Copies:</label>
+                    <input type="number" id="availableCopies" name="availableCopies" required>
+     
+                    <button type="submit" class="modalButton">Add Book</button>
+                 </form>
+                 </div>
+           </div>  
+       </main>   
+           
+   </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
